@@ -1,0 +1,152 @@
+:root {
+    --border-size: 0.5mm;
+    --border: solid black var(--border-size);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: RobotoBold;
+    src: url(assets/fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: RobotoLight;
+    src: url(assets/fonts/Roboto-Light.ttf);
+}
+
+html {
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+b {
+    font-family: RobotoBold;
+}
+
+.a4 {
+    min-width: 297mm;
+    min-height: calc(210mm - 4mm);
+    max-width: 297mm;
+    max-height: calc(210mm - 4mm);
+
+    padding: 5mm;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen {
+    .container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .a4 {
+        margin: auto;
+        box-shadow: 0 0 10px 0px rgb(0 0 0 / 23%), 5px 5px 5px 0px rgb(0 0 0 / 23%);
+    }
+}
+
+#top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4mm;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+#title img {
+    margin-right: 3mm;
+    height: 1.5rem;
+}
+
+#date {
+    font-size: 1.5rem;
+    font-style: normal;
+    text-transform: capitalize;
+    font-family: RobotoLight;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2mm 3mm;
+}
+
+.differentMonth > * {
+    opacity: 40%;
+}
+
+.day .date {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.day .meals {
+    display: flex;
+    justify-content: space-between;
+}
+
+.day .meals .meal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day .meals .meal .meal-name {
+    font-size: 1.5rem;
+}
+
+.day .meals .meal .meal-box {
+    width: 7mm;
+    height: 7mm;
+    border: var(--border);
+}
+
+.table {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-top: var(--border);
+    border-left: var(--border);
+}
+
+.table > div {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.table > div > div {
+    border-bottom: var(--border);
+    border-right: var(--border);
+}
+
+.table .heading {
+    margin-top: calc(-1 * var(--border-size));
+    margin-left: calc(-1 * var(--border-size));
+}
+
+.table > .body {
+    grid-auto-rows: calc(100% / 6);
+    flex: 1;
+    margin-left: calc(-1 * var(--border-size));
+}
+
+.table > .heading > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 1mm;
+}
